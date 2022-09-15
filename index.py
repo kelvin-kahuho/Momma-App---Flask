@@ -46,6 +46,11 @@ def book_appointment():
 def view_appointment():
     return render_template("view_appointments.html")
 
+@app.route("/profile")
+def view_profile():
+    return render_template("profile.html")
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
