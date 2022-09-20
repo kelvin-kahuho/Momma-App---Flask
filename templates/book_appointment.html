@@ -2,24 +2,40 @@
 {% block content %}
     <h1>Book Appointments</h1>
     <h4> Appointment Form </h4>
-    <form class="modal-content">
-    <div class="container">
-        <label>Email Address: </label>
-        <input type="email" placeholder="Enter EmailAddress" name="email address" required>
-        <label>Phone number : </label>
-        <input type="phone" placeholder="Phone Number" id="phone" required>
-        <label>Note to the doctor : </label>
-        <input type="results" placeholder="Note" id="results" required />
-        <label>Date: </label>
-        <input type="date" placeholder="Appointment date" id="date" required />
+    <form class="container-fluid">
+        <div class="form-group" style="width: 400px;">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Phone number : </label>
+            <input type="phone" placeholder="Phone Number" id="phone" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>First name : </label>
+            <input type="text" placeholder="First name" id="phone" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Second name : </label>
+            <input type="text" placeholder="Second name" id="phone" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Doctor's Note : </label>
+            <textarea id="results" rows="3"></textarea>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Date: </label>
+            <input type="date" placeholder="Appointment date" id="date" required />
+        </div>
+        <br>
         <button type="submit" onClick="alert('Thank you !. A health care provider will contact you through our email');">Book Appointment</button>
-    </div>
-    </form>
-
-    
-   <a href="/view">View appointments</a>
-   <a href="/">Home</a>
-   <a href="/profile">view profile</a>
+      </form>
 
 </body>
 </html>
