@@ -5,10 +5,12 @@ from unicodedata import name
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from datetime import date, datetime
-
+from forms import RegistrationForm, LogInForm
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
+
+app.config['SECRET_KEY'] = '788d5501a3787d2ddfe537f2f40239f3'
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -37,6 +39,16 @@ class Appointment(db.Model):
 @app.route("/")
 def hello():
     return render_template("hello.html")
+
+@app.route("/register")
+def register():
+    form = RegistrationForm()
+    return render_template("register.html", form=form)
+
+@app.route("/login")
+def log_in():
+    form = LogInForm()
+    return render_template("login.html", form=form)
 
 @app.route("/book")
 def book_appointment():
