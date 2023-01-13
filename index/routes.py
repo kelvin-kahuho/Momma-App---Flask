@@ -39,3 +39,7 @@ def view_appointment():
 @app.route("/profile")
 def view_profile():
     return render_template("profile.html")
+
+@app.route('/admin')
+def admin_panel():
+    return render_template('admin.html')
