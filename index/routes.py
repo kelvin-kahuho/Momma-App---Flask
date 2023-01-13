@@ -1,5 +1,5 @@
 from flask import render_template, flash, redirect, url_for
-from index import app
+from index import app, admin
 from index.models import User, Appointment
 from index.forms import RegistrationForm, LogInForm, AppointmentForm
 
@@ -42,4 +42,4 @@ def view_profile():
 
 @app.route('/admin')
 def admin_panel():
-    return render_template('admin.html')
+    return render_template('admin.html', admin=admin)

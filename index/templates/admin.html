@@ -1,3 +1,24 @@
 {% extends 'main.html' %}
 {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Admin Panel</h1>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="{{ url_for('admin.index') }}" class="list-group-item">Dashboard</a>
+                    <a href="{{ url_for('admin.index', model='user') }}" class="list-group-item">Users</a>
+                    <a href="{{ url_for('admin.index', model='doctor') }}" class="list-group-item">Doctors</a>
+                    <a href="{{ url_for('admin.index', model='appointment') }}" class="list-group-item">Appointments</a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                {% block admin_content %}{% endblock %}
+            </div>
+        </div>
+    </div>
 {% endblock content %}
