@@ -43,3 +43,8 @@ def view_profile():
 @app.route('/admin')
 def admin_panel():
     return render_template('admin.html', admin=admin)
+
+@app.route('/static/<path:path>')
+def send_image(path):
+    return app.send_static_file(path)
+

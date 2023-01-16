@@ -10,7 +10,7 @@
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body style="background-image: url_for ('send_image', path='images/background.jpg;'); background-size: cover; background-repeat: no-repeat; background-position: center center;">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<a style="font-size: 45px; font-style:normal; font-family: serif; color: rgb(163, 233, 72);" class="navbar-brand" href="/">Momma</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,14 +33,14 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('view_profile') }}">View profile</a>
         </li>
+        <!--
         <form class="">
           <input class="mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-success" type="submit">Search</button>
-        </form>
+        </form> -->
       </ul>
     </div>
   </nav>
-
 
     <div class ="container">
       <br>

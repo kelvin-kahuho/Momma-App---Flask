@@ -1,7 +1,9 @@
 {% extends 'main.html' %}
 {% block content %}
 <div class="profile">
-    <h1>Hello Kelvin</h1>
+    <img src="{{ url_for('send_image', path='images/background.jpg') }}" alt="">
+    <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F268533%2Fpexels-photo-268533.jpeg%3Fcs%3Dsrgb%26dl%3Dpexels-pixabay-268533.jpg%26fm%3Djpg&imgrefurl=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbeautiful%2F&tbnid=nwiTKnJXTwcwcM&vet=12ahUKEwiCtcXa68v8AhWysCcCHbqsCXwQMygDegUIARDmAQ..i&docid=B51x0PBR9KNzvM&w=1920&h=1278&itg=1&q=images&ved=2ahUKEwiCtcXa68v8AhWysCcCHbqsCXwQMygDegUIARDmAQ" alt="">
+
     <h1>Details</h1>
 </div>
 {% endblock content %}
