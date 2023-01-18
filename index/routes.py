@@ -46,5 +46,5 @@ def admin_panel():
 
 @app.route('/static/<path>')
 def send_image(path):
-    return app.send_static_file(name=path)
+    return app.send_static_file(path)
 
