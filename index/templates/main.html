@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Momma</title>
-    <link rel="stylesheet" type="text/css" href="static.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/static.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body style="background-image: url_for ('send_image', path='images/background.jpg;'); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+<body style="background-image: url({{ url_for('static', filename='images/background.jpg') }}); background-size: cover; background-repeat: no-repeat; background-position: center center;">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<a style="font-size: 45px; font-style:normal; font-family: serif; color: rgb(163, 233, 72);" class="navbar-brand" href="/">Momma</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
