@@ -1,6 +1,7 @@
-.h1 {
-    size: 100px;
-    color: brown;
+h1 {
+    font-size: 20px;
+    color: rgb(47, 47, 49);
+    font-weight: bold;
 }
 
 .container .name .profile .block_content{
