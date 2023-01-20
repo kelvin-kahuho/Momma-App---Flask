@@ -9,3 +9,19 @@ h1 {
 
 }
 
+.essay{
+    font-size: large;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 200px;
+    margin-right: 200px;
+    overflow: scroll;
+    max-height: 850px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
