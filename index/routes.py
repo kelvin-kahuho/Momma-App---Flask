@@ -2,9 +2,16 @@ from flask import render_template, request, session, redirect, url_for
 from index import app, admin, db
 from index.models import User, Appointment
 
+#Function to check if user is logged in
+
+def check_authentication():
+    if not session.get("logged_in"):
+        return redirect(url_for("log_in"))
+
 
 @app.route("/")
 def home():
+    check_authentication()
     return render_template("home.html")
 
 @app.route("/register",methods=['GET', 'POST'])
@@ -57,14 +64,17 @@ def logout():
 
 @app.route("/book", methods=['GET', 'POST'])
 def book_appointment():
+    check_authentication()
     return render_template("book_appointment.html")
 
 @app.route("/view")
 def view_appointment():
+    check_authentication()
     return render_template("view_appointments.html")
 
 @app.route("/profile")
 def view_profile():
+    check_authentication()
     return render_template("profile.html")
 
 @app.route('/admin')
