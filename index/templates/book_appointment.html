@@ -1,6 +1,24 @@
 {% extends 'main.html' %}
 {% block content %}
 <div class="content-section">
+    <form action="{{ url_for('book_appointment') }}" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+    
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required>
+    
+        <label for="reason">Reason for visit:</label>
+        <textarea id="reason" name="reason" required></textarea>
+    
+        <input type="submit" value="Book Appointment">
+    </form>
     
 </div>
 {% endblock content %}

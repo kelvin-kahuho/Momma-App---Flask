@@ -75,3 +75,77 @@ input[type="submit"] {
     margin-top: 10px;
     text-align: center;
 }
+
+.logout-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 14px 20px; /* Some padding */
+    margin: 8px 0; /* Add some margin */
+    border: none; /* Remove border */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    font-size: 18px; /* Increase font size */
+}
+
+.logout-button:hover {
+    background-color: #3e8e41; /* Darken background on hover */
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+label {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 1em;
+    display: block;
+}
+
+input[type="text"], input[type="email"], input[type="date"], input[type="time"], textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.8em 1.2em;
+    margin-top: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.error {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

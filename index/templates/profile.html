@@ -1,6 +1,36 @@
 {% extends 'main.html' %}
 {% block content %}
 <div class="profile">
-    <h1>Personal Details</h1>
+    <h1>My profile</h1>
+    <div class="user-info">
+        <p>Username: {{user.username}}</p>
+        <p>Email: {{ user.email }}</p>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Appointment Date</th>
+                        <th>Appointment Time</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for appointment in appointments %}
+                    <tr>
+                        <td>{{ appointment.date }}</td>
+                        <td>{{ appointment.time }}</td>
+                        <td>{{ appointment.message }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+
 </div>
+<a href="{{url_for('logout')}}" onclick="return confirm('Are you sure you want to logout?');">
+    <button class="logout-button logout-button:hover">Logout</button>
+</a>
+
 {% endblock content %}

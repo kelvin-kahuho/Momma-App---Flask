@@ -11,10 +11,9 @@ db = SQLAlchemy(app)
 app.config['SECRET_KEY'] = '788d5501a3787d2ddfe537f2f40239f3'
 
 
-from index.models import User, Doctor, Appointment
+from index.models import User, Appointment
 admin = Admin(app, name='Admin Interface')
 admin.add_view(ModelView(User, db.session))
-admin.add_view(ModelView(Doctor, db.session))
 admin.add_view(ModelView(Appointment, db.session))
 
 

@@ -12,20 +12,16 @@ class User(db.Model):
     def __repr__(self):
         return '<User %r>' % self.username
 
-class Doctor(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80), unique=True, nullable=False)
-    specialty = db.Column(db.String(120), nullable=False)
-    appointments = db.relationship('Appointment', backref='doctor', lazy=True)
-
-    def __repr__(self):
-        return '<Doctor %r>' % self.name
-
 class Appointment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    date = db.Column(db.DateTime, nullable=False)
+    name = db.Column(db.String(50), nullable=False)
+    email = db.Column(db.String(120), nullable=False)
+    date = db.Column(db.String(20), nullable=False)
+    time = db.Column(db.String(20), nullable=False)
+    message = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    doctor_id = db.Column(db.Integer, db.ForeignKey('doctor.id'), nullable=False)
+    
+
 
     def __repr__(self):
-        return '<Appointment %r>' % self.id
+        return '<Appointment %r>' % self.name
