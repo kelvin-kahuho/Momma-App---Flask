@@ -1,7 +1,6 @@
 from flask import render_template, flash, redirect, url_for
 from index import app, admin
 from index.models import User, Appointment
-from index.forms import RegistrationForm, LogInForm, AppointmentForm
 
 @app.route("/")
 def hello():
@@ -9,28 +8,16 @@ def hello():
 
 @app.route("/register",methods=['GET', 'POST'])
 def register():
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        flash(f'Account created for {form.username.data}!', 'success')
-        return redirect(url_for('hello'))
-    return render_template("register.html", form=form)
+    return render_template("register.html")
 
 @app.route("/login", methods=['GET', 'POST'])
 def log_in():
-    form = LogInForm()
-    if form.validate_on_submit():
-        flash(f'Login successful. Welcome {form.email.data}!', 'success')
-        return redirect(url_for('hello'))
 
-    return render_template("login.html", form=form)
+    return render_template("login.html")
 
 @app.route("/book", methods=['GET', 'POST'])
 def book_appointment():
-    form = AppointmentForm()
-    if form.validate_on_submit():
-        flash(f'You have successifully booked an appointment at {form.date.data}!', 'success')
-        return redirect(url_for('view_appointment'))
-    return render_template("book_appointment.html", form=form)
+    return render_template("book_appointment.html")
 
 @app.route("/view")
 def view_appointment():
