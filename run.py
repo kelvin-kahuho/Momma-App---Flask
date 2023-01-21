@@ -1,5 +1,6 @@
-from index import app
+from index import app, db
 
 
 if __name__ == '__main__':
-    app.run(host="localhost", port=8001, debug=True)
+    db.create_all()
+    app.run(host="localhost", port=5001, debug=True)

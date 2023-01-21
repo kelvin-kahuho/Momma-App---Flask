@@ -27,7 +27,7 @@ def register():
         # check if user exists
         if User.query.filter_by(username=username).first() or User.query.filter_by(email=email).first():
             error = "Username or email already exists"
-            return render_template("signup.html", error=error)
+            return render_template("register.html", error=error)
         # create new user
         new_user = User(username=username, email=email, password=password)
         db.session.add(new_user)
@@ -59,7 +59,7 @@ def log_in():
 @app.route("/logout")
 def logout():
     session.clear()
-    return redirect(url_for("login"))
+    return redirect(url_for("log_in"))
 
 
 @app.route("/book", methods=['GET', 'POST'])

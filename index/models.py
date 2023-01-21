@@ -3,28 +3,29 @@ from index import db
 from datetime import date, datetime
 
 class User(db.Model):
-    __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(50), nullable=False)
-    last_name = db.Column(db.String(50), nullable=False)
-    email = db.Column(db.String(100), unique=True, nullable=False)
-    password = db.Column(db.String(100), nullable=False)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(120), nullable=False)
     appointments = db.relationship('Appointment', backref='user', lazy=True)
 
+    def __repr__(self):
+        return '<User %r>' % self.username
+
 class Doctor(db.Model):
-    __tablename__ = 'doctors'
     id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(50), nullable=False)
-    last_name = db.Column(db.String(50), nullable=False)
-    email = db.Column(db.String(100), unique=True, nullable=False)
-    password = db.Column(db.String(100), nullable=False)
-    specialty = db.Column(db.String(50), nullable=False)
+    name = db.Column(db.String(80), unique=True, nullable=False)
+    specialty = db.Column(db.String(120), nullable=False)
     appointments = db.relationship('Appointment', backref='doctor', lazy=True)
 
+    def __repr__(self):
+        return '<Doctor %r>' % self.name
+
 class Appointment(db.Model):
-    __tablename__ = 'appointments'
     id = db.Column(db.Integer, primary_key=True)
-    date_time = db.Column(db.DateTime, nullable=False)
-    reason = db.Column(db.String(255))
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    doctor_id = db.Column(db.Integer, db.ForeignKey('doctors.id'), nullable=False)
+    date = db.Column(db.DateTime, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    doctor_id = db.Column(db.Integer, db.ForeignKey('doctor.id'), nullable=False)
+
+    def __repr__(self):
+        return '<Appointment %r>' % self.id

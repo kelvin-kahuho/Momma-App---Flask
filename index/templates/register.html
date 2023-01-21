@@ -1,5 +1,6 @@
 {% extends 'main.html' %}
 {% block content %}
+<p class="error">{{error}}!</p>
 <div class="content-section form">
     <form action="{{ url_for('register') }}" method="post">
         <label for="username">Username:</label>
