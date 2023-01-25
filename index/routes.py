@@ -39,7 +39,8 @@ def log_in():
         if user and user.password == password:
             session["logged_in"] = True
             session["username"] = user.username
-            return redirect(url_for("home"))
+            success = "Logged in successfully"
+            return render_template("home.html", success=success)
         else:
             error = "Invalid username or password!"
             return render_template("login.html", error=error)
@@ -49,8 +50,8 @@ def log_in():
 @app.route("/logout")
 def logout():
     session.clear()
-    return redirect(url_for("log_in"))
-
+    success = "Logged out successfully"
+    return render_template("login.html", success=success)
 
 #Function to check if user is logged in
 
