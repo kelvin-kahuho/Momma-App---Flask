@@ -79,8 +79,8 @@ input[type="submit"] {
 .logout-button {
     background-color: #4CAF50; /* Green background */
     color: white; /* White text */
-    padding: 14px 20px; /* Some padding */
-    margin: 8px 0; /* Add some margin */
+    padding: 9px 15px; /* Some padding */
+    margin: 0px 0; /* Add some margin */
     border: none; /* Remove border */
     cursor: pointer; /* Add a pointer cursor on hover */
     font-size: 18px; /* Increase font size */
