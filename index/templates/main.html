@@ -12,20 +12,12 @@
 </head>
 <body style="background-image: url({{ url_for('static', filename='images/background.jpg') }}); background-size: cover; background-attachment: fixed; background-repeat: no-repeat;">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a style="font-size: 45px; font-style:normal; font-family: serif; color: rgb(163, 233, 72);" class="navbar-brand" href="/">Momma</a>
+		<a style="font-size: 45px; font-style:normal; font-family: serif; color: rgb(163, 233, 72);" class="navbar-brand" href="/home">Momma</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse nav justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('log_in') }}">Login</a>
-        </li>
-        <!--
-          <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('register') }}">Register</a>
-        </li>
-        -->
         <li class="nav-item active">
           <a class="nav-link" href="{{ url_for('book_appointment') }}">Book appointment</a>
         </li>
@@ -41,15 +33,6 @@
 
     <div class ="container">
       <br>
-      {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        {% for category, message in messages %}
-          <div class="alert alert-{{ category }}">
-            {{message}}
-          </div>
-        {% endfor %}
-      {%endif%}
-      {% endwith %}
             {% block content %}
         
         
