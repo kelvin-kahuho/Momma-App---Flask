@@ -24,7 +24,7 @@ def register():
         db.session.commit()
         session["logged_in"] = True
         session["username"] = new_user.username
-        return redirect(url_for("home"))
+        return redirect(url_for("book_appointment"))
     else:
         return render_template("register.html")
 
@@ -40,7 +40,7 @@ def log_in():
             session["logged_in"] = True
             session["username"] = user.username
             success = "Logged in successfully"
-            return render_template("home.html", success=success)
+            return render_template("book_appointment.html", success=success)
         else:
             error = "Invalid username or password!"
             return render_template("login.html", error=error)
