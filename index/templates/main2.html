@@ -10,8 +10,9 @@
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body style="background-image: url({{ url_for('static', filename='images/background.jpg') }}); background-size: cover; background-attachment: fixed; background-repeat: no-repeat;">
-    <h1 style="font-size: 45px; font-style:normal; font-family: serif; color: rgb(163, 233, 72); text-align: center; background-color: rgb(77, 51, 51);">Momma</h1>
+<body style="background-image: url({{ url_for('static', filename='images/background1.jpg') }}); background-size: cover; background-attachment: fixed; background-repeat: no-repeat;">
+    <img src="{{url_for('static', filename='images/momma.png')}}" class="center logo" alt="">
+
     <p class="error">{{error}}</p>
     <div class ="container">
     <br>
