@@ -1,5 +1,7 @@
 {% extends 'main.html' %}
 {% block content %}
+<p class="error">{{error}}</p>
+<p class="error">{{success}}</p>
 <div class="content-section">
     <form action="{{ url_for('book_appointment') }}" method="POST">
         <label for="name">Name:</label>
@@ -14,8 +16,8 @@
         <label for="time">Time:</label>
         <input type="time" id="time" name="time" required>
     
-        <label for="reason">Reason for visit:</label>
-        <textarea id="reason" name="reason" required></textarea>
+        <label for="message">Reason for visit:</label>
+        <textarea  type="text" id="message" name="message" required></textarea>
     
         <input type="submit" value="Book Appointment">
     </form>

@@ -61,8 +61,7 @@ def check_authentication():
 
 @app.route("/")
 def home():
-    username = session['username']
-    return render_template("home.html", username=username)
+    return render_template("home.html")
 
 
 
@@ -82,17 +81,14 @@ def book_appointment():
         try:
             db.session.add(appointment)
             db.session.commit()
-            return redirect('/success')
+            success = 'Appointment booked successfully!'
+            return render_template("book_appointment.html", success=success)
         except:
-            return 'There was an issue booking your appointment'
+            error = 'There was an issue booking your appointment'
+            return render_template("book_appointment.html", error=error)
 
     else:
         return render_template("book_appointment.html")
-
-@app.route('/success')
-def success():
-    return 'Appointment booked successfully!'
-
 
 @app.route("/view")
 def view_appointment():
@@ -100,14 +96,15 @@ def view_appointment():
     username = session['username']
     user = User.query.filter_by(username=username).first()
     appointments = Appointment.query.filter_by(user_id=user.id)
-    return render_template("view_appointments.html", appointments)
+    return render_template("view_appointments.html", appointments=appointments)
 
 @app.route("/profile")
 def view_profile():
     check_authentication()
     username = session['username']
     user = User.query.filter_by(username=username).first()
-    return render_template("profile.html", user)
+    appointments = Appointment.query.filter_by(user_id=user.id)
+    return render_template("profile.html", user=user, appointments=appointments)
 
 @app.route('/admin')
 def admin_panel():
