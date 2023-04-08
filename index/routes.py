@@ -64,6 +64,10 @@ def check_authentication():
 def home():
     return render_template("home.html")
 
+@app.route("/take_test")
+def take_test():
+    return render_template("take_test.html")
+
 
 
 @app.route("/book", methods=['GET', 'POST'])
