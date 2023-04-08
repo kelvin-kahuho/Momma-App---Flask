@@ -1,8 +1,29 @@
 {% extends 'main.html' %}
 {% block content %}
 <p class="error">{{success}}</p>
-<p>Depression is a serious mental health condition that affects millions of people worldwide. It is characterized by feelings of sadness, hopelessness, and loss of interest in activities that were once enjoyable. Depression can be caused by various factors, including genetics, life events, and chemical imbalances in the brain. It is crucial to recognize the signs of depression and seek treatment promptly to prevent the condition from worsening.
-    One way to recognize the signs of depression is by taking a depression test calculator. These tools are designed to assess the severity of symptoms and determine whether an individual is at risk of depression. A depression test calculator typically includes questions about the frequency and intensity of symptoms, such as feelings of sadness, loss of interest, and changes in appetite or sleep patterns. The results can provide valuable information about whether an individual should seek professional help.
+<p class="error">{{error}}</p>
+<p>
+    <br>
+    <br>
+    Studies show that postpartum depression (PPD) affects
+    at least 10 percent of women and that many depressed
+    mothers do not get proper treatment. These mothers
+    might cope with their baby and with household tasks, but
+    their enjoyment of life is seriously affected, and it is
+    possible that there are long term effects on the family.
+    <br>
+    <br>
+    The Postnatal Depression Scale was
+    developed to assist health professionals in detecting
+    mothers suffering from PPD; a distressing disorder more
+    prolonged than the “blues” (which can occur in the first
+    week after delivery).
+    <br>
+    <br>
+    The scale consists of 10 short statements. A mother
+    checks off one of four possible answers that is closest to
+    how she has felt during the past week. Most mothers
+    easily complete the scale in less than five minutes.
 </p>
 <div class="center">
     <a href="{{url_for('take_test')}}">
