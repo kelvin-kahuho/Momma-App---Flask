@@ -40,7 +40,7 @@ def log_in():
             session["logged_in"] = True
             session["username"] = user.username
             success = "Logged in successfully"
-            return render_template("book_appointment.html", success=success)
+            return render_template("home.html", success=success)
         else:
             error = "Invalid username or password!"
             return render_template("login.html", error=error)
@@ -64,9 +64,40 @@ def check_authentication():
 def home():
     return render_template("home.html")
 
-@app.route("/take_test")
+@app.route("/take_test", methods=['GET', 'POST'])
 def take_test():
-    return render_template("take_test.html")
+    if request.method == 'POST':
+
+        q1 = int(request.form.get('q1'))
+        q2 = int(request.form.get('q2'))
+        q3 = int(request.form.get('q3'))
+        q4 = int(request.form.get('q4'))
+        q5 = int(request.form.get('q5'))
+        q6 = int(request.form.get('q6'))
+        q7 = int(request.form.get('q7'))
+        q8 = int(request.form.get('q8'))
+        q9 = int(request.form.get('q9'))
+        q10 = int(request.form.get('q10'))
+
+        score = round(q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10)
+
+        if score > 13:
+
+            score = f'Your score is, {score}/30 !'
+
+            text = 'Mothers scoring above 12 or 13 are likely to be suffering from depression and should seek medical attention. A careful clinical evaluation by a health care professional is needed to confirm a diagnosis and establish a treatment plan'
+
+            return render_template("book_appointment.html", score = score, text = text)
+        
+        else:
+            
+            score = f'Your score is, {score}/30 !'
+            
+            return render_template("take_test.html", score = score)
+    
+    else:
+
+        return render_template('take_test.html')
 
 
 
