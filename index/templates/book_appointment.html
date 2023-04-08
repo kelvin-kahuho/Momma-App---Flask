@@ -2,7 +2,9 @@
 {% block content %}
 <p class="error">{{error}}</p>
 <p class="error">{{success}}</p>
-
+<p class="error">{{score}}</p>
+<br>
+<p class="center">{{text}}</p>
 <div class="content-section">
     <h3 style="text-align: center;">Book An Appointment</h3>
     <form action="{{ url_for('book_appointment') }}" method="POST">
