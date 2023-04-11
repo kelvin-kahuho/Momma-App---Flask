@@ -21,8 +21,8 @@ Bootstrap for styling and user interface design
 Installation:
 
 Clone the repository and navigate to the project directory
-Install the required dependencies using pip install -r requirements.txt
-Run the application using python app.py
+Install the required dependencies
+Run the application using python run.py
 Contributing:
 
 Contributions are welcome! If you would like to contribute to this project, please open an issue or pull request on the Github repository.
