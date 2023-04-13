@@ -16,7 +16,7 @@ Technologies Used:
 
 Python for backend logic
 Flask web framework for frontend and backend integration
-PostgreSQL database for storing user information and appointment scheduling
+SQLite database for storing user information and appointment scheduling
 Bootstrap for styling and user interface design
 Installation:
 
