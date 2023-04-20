@@ -4,6 +4,8 @@ This is an application that helps new mothers determine if they may be experienc
 
 The application features a PND calculator that asks the user a series of questions related to their mood, sleep patterns, and other factors that may be indicative of PND. Based on the user's answers, the calculator generates a score that indicates the likelihood of PND, along with recommendations for next steps.
 
+The app also features a chatbot created using Rasa which is a python library. The chatbot is designed to be a companion for mothers with not so severe symptoms of pnd
+
 If the user's score indicates a moderate to high risk of PND, the application offers a doctor appointment booking system that allows the user to easily schedule an appointment with a healthcare professional who can provide further evaluation and treatment.
 
 Features:
