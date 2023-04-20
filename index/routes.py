@@ -1,7 +1,7 @@
 from flask import render_template, request, session, redirect, url_for, jsonify
 from index import app, admin, db
 from index.models import User, Appointment
-
+import asyncio
 import rasa
 from rasa.core.agent import Agent
 
@@ -147,11 +147,11 @@ def view_profile():
     appointments = Appointment.query.filter_by(user_id=user.id)
     return render_template("profile.html", user=user, appointments=appointments)
 
-@app.route('/chatbot', methods=['POST'])
-def chatbot():
-    user_message = request.form['user_message']
-    responses = agent.handle_text(user_message)
-    return jsonify(responses)
+@app.route('/chat', methods=['POST'])
+def chat():
+    user_input = request.form['user_input']
+    response = asyncio.run(agent.handle_text(user_input))
+    return jsonify(response)
 
 
 @app.route("/chat_page")
