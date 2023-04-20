@@ -1,0 +1,58 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="chat-container">
+    <div class="chat-header">
+      <h2>Chatbot</h2>
+    </div>
+    <div class="chat-body" id="chat-body">
+    </div>
+    <div class="chat-footer">
+      <form id="chat-form">
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button type="submit" id="send-btn">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    const chatBody = document.getElementById("chat-body");
+    const chatForm = document.getElementById("chat-form");
+    const userInput = document.getElementById("user-input");
+
+    chatForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const message = userInput.value;
+      sendMessage(message);
+      userInput.value = "";
+    });
+
+    function appendBotMessage(message) {
+      const messageItem = document.createElement("div");
+      messageItem.classList.add("message-item", "bot-message");
+      messageItem.innerHTML = `
+        <div class="message-text">${message}</div>
+      `;
+      chatBody.appendChild(messageItem);
+    }
+
+    function sendMessage(message) {
+      fetch("/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `user_input=${message}`
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          appendBotMessage(data[0].text);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  </script>
+
+
+{% endblock content %}
