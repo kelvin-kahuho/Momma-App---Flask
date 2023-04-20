@@ -1,7 +1,12 @@
-from flask import render_template, request, session, redirect, url_for
+from flask import render_template, request, session, redirect, url_for, jsonify
 from index import app, admin, db
 from index.models import User, Appointment
 
+import rasa
+from rasa.core.agent import Agent
+
+model_path = "index/models/20230419-014324-numerous-vertex.tar.gz"
+agent = Agent.load(model_path)
 
 
 @app.route("/register",methods=['GET', 'POST'])
@@ -141,6 +146,18 @@ def view_profile():
     user = User.query.filter_by(username=username).first()
     appointments = Appointment.query.filter_by(user_id=user.id)
     return render_template("profile.html", user=user, appointments=appointments)
+
+@app.route('/chatbot', methods=['POST'])
+def chatbot():
+    user_message = request.form['user_message']
+    responses = agent.handle_text(user_message)
+    return jsonify(responses)
+
+
+@app.route("/chat_page")
+def chat_page():
+    return render_template("chat.html")
+
 
 @app.route('/admin')
 def admin_panel():
