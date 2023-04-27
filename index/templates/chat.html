@@ -37,6 +37,14 @@
     }
 
     function sendMessage(message) {
+      // create a message item to display user input
+      const userMessageItem = document.createElement("div");
+      userMessageItem.classList.add("message-item", "user-message");
+      userMessageItem.innerHTML = `
+        <div class="message-text">${message}</div>
+      `;
+      chatBody.appendChild(userMessageItem);
+
       fetch("/chat", {
         method: "POST",
         headers: {
