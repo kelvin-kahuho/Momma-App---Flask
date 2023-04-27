@@ -27,6 +27,10 @@
       userInput.value = "";
     });
 
+    function scrollToBottom() {
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
     function appendBotMessage(message) {
       const messageItem = document.createElement("div");
       messageItem.classList.add("message-item", "bot-message");
@@ -34,6 +38,7 @@
         <div class="message-text">${message}</div>
       `;
       chatBody.appendChild(messageItem);
+      scrollToBottom();
     }
 
     function sendMessage(message) {
