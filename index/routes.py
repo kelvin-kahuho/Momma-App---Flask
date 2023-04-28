@@ -153,7 +153,7 @@ def chat():
     response = asyncio.run(agent.handle_text(user_input))
 
 
-    bot_response = str(response)
+    bot_response = response[0]['text']
     message = Message(user_input=user_input, bot_response=bot_response)
     db.session.add(message)
     db.session.commit()
