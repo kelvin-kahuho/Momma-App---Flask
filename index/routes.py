@@ -1,6 +1,6 @@
 from flask import render_template, request, session, redirect, url_for, jsonify
 from index import app, admin, db
-from index.models import User, Appointment
+from index.models import User, Appointment, Message
 import asyncio
 import rasa
 from rasa.core.agent import Agent
@@ -29,7 +29,7 @@ def register():
         db.session.commit()
         session["logged_in"] = True
         session["username"] = new_user.username
-        return redirect(url_for("book_appointment"))
+        return redirect(url_for("home"))
     else:
         return render_template("register.html")
 
@@ -147,16 +147,26 @@ def view_profile():
     appointments = Appointment.query.filter_by(user_id=user.id)
     return render_template("profile.html", user=user, appointments=appointments)
 
-@app.route('/chat', methods=['POST'])
+@app.route('/chat', methods=['POST', 'GET'])
 def chat():
     user_input = request.form['user_input']
     response = asyncio.run(agent.handle_text(user_input))
+
+
+    bot_response = str(response)
+    message = Message(user_input=user_input, bot_response=bot_response)
+    db.session.add(message)
+    db.session.commit()
+
+
     return jsonify(response)
 
 
-@app.route("/chat_page")
+@app.route("/chat_page", methods=['POST', 'GET'])
 def chat_page():
-    return render_template("chat.html")
+
+    messages = Message.query.all()
+    return render_template("chat.html", messages=messages)
 
 
 @app.route('/admin')
