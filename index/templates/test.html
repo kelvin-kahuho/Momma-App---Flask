@@ -1,0 +1,26 @@
+{% extends 'main.html'%}
+{% block content%}
+<p class="error">{{success}}</p>
+<h1 style="text-align: center;">Database Schema</h1>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>user-input</th>
+                <th>bot-response</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for message in messages %}
+            <tr>
+                <td>{{ appointment.timestamp }}</td>
+                <td>{{ appointment.user_input }}</td>
+                <td>{{ appointment.bot_response }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</div>
+{%endblock%}
