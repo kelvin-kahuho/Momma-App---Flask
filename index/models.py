@@ -25,3 +25,14 @@ class Appointment(db.Model):
 
     def __repr__(self):
         return '<Appointment %r>' % self.name
+    
+
+class Message(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+    user_input = db.Column(db.String(255))
+    bot_response = db.Column(db.String(1000))
+
+    def __repr__(self):
+        return '<Message %r>' % self.id
+    
