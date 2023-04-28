@@ -174,4 +174,9 @@ def admin_panel():
     return render_template('admin.html', admin=admin)
 
 
+@app.route('/test')
+def test_page():
+    return render_template('test.html')
+
+
 
