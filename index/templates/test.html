@@ -1,6 +1,5 @@
 {% extends 'main.html'%}
 {% block content%}
-<p class="error">{{success}}</p>
 <h1 style="text-align: center;">Database Schema</h1>
 <div>
     <table>
@@ -14,9 +13,9 @@
         <tbody>
             {% for message in messages %}
             <tr>
-                <td>{{ appointment.timestamp }}</td>
-                <td>{{ appointment.user_input }}</td>
-                <td>{{ appointment.bot_response }}</td>
+                <td>{{ message.timestamp }}</td>
+                <td>{{ message.user_input }}</td>
+                <td>{{ message.bot_response }}</td>
             </tr>
             {% endfor %}
         </tbody>
