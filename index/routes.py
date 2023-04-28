@@ -176,7 +176,10 @@ def admin_panel():
 
 @app.route('/test')
 def test_page():
-    return render_template('test.html')
+
+    messages = Message.query.all()
+
+    return render_template('test.html', messages)
 
 
 
