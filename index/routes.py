@@ -179,7 +179,7 @@ def test_page():
 
     messages = Message.query.all()
 
-    return render_template('test.html', messages)
+    return render_template('test.html', messages=messages)
 
 
 
