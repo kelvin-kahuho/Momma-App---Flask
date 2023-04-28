@@ -6,6 +6,11 @@
       <h2>How can I help you today?</h2>
     </div>
     <div class="chat-body" id="chat-body">
+      {% for message in messages %}
+      <div class="message-item {% if message.bot_response %}bot-message{% else %}user-message{% endif %}">
+        <div class="message-text">{{ message.user_input or message.bot_response }}</div>
+      </div>
+      {% endfor %}
     </div>
     <div class="chat-footer">
       <form id="chat-form">
