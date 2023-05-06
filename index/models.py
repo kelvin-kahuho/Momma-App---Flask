@@ -26,7 +26,7 @@ class Appointment(db.Model):
     def __repr__(self):
         return '<Appointment %r>' % self.name
     
-
+"""
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
@@ -36,3 +36,4 @@ class Message(db.Model):
     def __repr__(self):
         return '<Message %r>' % self.id
     
+"""

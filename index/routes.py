@@ -1,11 +1,11 @@
 from flask import render_template, request, session, redirect, url_for, jsonify
 from index import app, admin, db
-from index.models import User, Appointment, Message
+from index.models import User, Appointment
 import asyncio
 import rasa
 from rasa.core.agent import Agent
 
-model_path = "index/models/20230419-014324-numerous-vertex.tar.gz"
+model_path = "index/models/20230504-170850-soft-beaker.tar.gz"
 agent = Agent.load(model_path)
 
 
@@ -152,21 +152,22 @@ def chat():
     user_input = request.form['user_input']
     response = asyncio.run(agent.handle_text(user_input))
 
-
+    '''
     bot_response = response[0]['text']
     message = Message(user_input=user_input, bot_response=bot_response)
     db.session.add(message)
     db.session.commit()
-
+    '''
 
     return jsonify(response)
 
 
 @app.route("/chat_page", methods=['POST', 'GET'])
 def chat_page():
-
+    """
     messages = Message.query.all()
-    return render_template("chat.html", messages=messages)
+    """
+    return render_template("chat.html")
 
 
 @app.route('/admin')
