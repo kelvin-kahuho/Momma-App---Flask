@@ -98,7 +98,7 @@ def take_test():
             
             score = f'Your score is, {score}/30 !'
             
-            return render_template("take_test.html", score = score)
+            return render_template("chat.html", score = score)
     
     else:
 
