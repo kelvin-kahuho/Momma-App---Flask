@@ -25,27 +25,27 @@
     </script>
 </head>
 <body style="background-image: url({{ url_for('static', filename='images/background.jpg') }}); background-size: cover; background-attachment: fixed; background-repeat: no-repeat;">
-  <nav class="navbar navbar-expand-lg bg-light">
-		<a style="font-size: 45px; font-style:normal; font-family: serif; color: rgb(0, 0, 0);" class="navbar-brand" href="/home">Momma</a>
+  <nav class="navbar navbar-expand-lg bg-dark">
+		<a style="font-size: 45px; font-style:normal; font-family: serif; color: rgb(255, 255, 255);" class="navbar-brand" href="/home">Momma</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse nav justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="{{ url_for('take_test') }}">Test</a>
+          <a style="color: rgb(255, 255, 255);" class="nav-link" href="{{ url_for('take_test') }}">Test</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="{{ url_for('chat_page') }}">Chat</a>
+          <a style="color: rgb(255, 255, 255);" class="nav-link" href="{{ url_for('chat_page') }}">Chat</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="{{ url_for('book_appointment') }}">Book appointment</a>
+          <a style="color: rgb(255, 255, 255);" class="nav-link" href="{{ url_for('book_appointment') }}">Book appointment</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('view_appointment') }}">View Appointments</a>
+          <a style="color: rgb(255, 255, 255);" class="nav-link" href="{{ url_for('view_appointment') }}">View Appointments</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('view_profile') }}">View profile</a>
+          <a style="color: rgb(255, 255, 255);" class="nav-link" href="{{ url_for('view_profile') }}">View profile</a>
         </li>
         <li>
           <a href="{{url_for('logout')}}" onclick="return confirm('Are you sure you want to logout?');">
