@@ -20,6 +20,8 @@ class Appointment(db.Model):
     time = db.Column(db.String(20), nullable=False)
     message = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    doctor_id = db.Column(db.Integer, db.ForeignKey('doctor.id'), nullable=False)
+
     
 
 
@@ -37,3 +39,19 @@ class Message(db.Model):
         return '<Message %r>' % self.id
     
 """
+
+#Doctors class
+class Doctor(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), unique=True,nullable=False)
+    email = db.Column(db.String(100), unique=True,nullable=False)
+    specialization = db.Column(db.String(100), nullable=False)
+    password = db.Column(db.String(120), nullable=False)
+    appointments = db.relationship('Appointment', backref='doctor', lazy=True)
+
+
+
+    def __repr__(self):
+        return '<Doctor %r>' % self.name
+    
+
