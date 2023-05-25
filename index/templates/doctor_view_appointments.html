@@ -1,0 +1,24 @@
+{% extends 'main.html'%}
+{% block content%}
+<p class="error">{{success}}</p>
+<h1 style="text-align: center;">Your Appointments</h1>
+<h2>{{ doctor.name }}</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Appointment Date</th>
+                <th>Patient</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appointment in appointments %}
+                <tr>
+                    <td>{{ appointment.appointment_time }}</td>
+                    <td>{{ appointment.patient.name }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+{%endblock%}
