@@ -7,23 +7,26 @@
 <p class="center">{{text}}</p>
 <div class="content-section">
     <h3 style="text-align: center;">Book An Appointment</h3>
-    <form action="{{ url_for('book_appointment') }}" method="POST">
+    <form name="form1" action="{{ url_for('book_appointment') }}" method="POST">
+
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
     
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
-    
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required>
-    
-        <label for="time">Time:</label>
-        <input type="time" id="time" name="time" required>
-    
+
         <label for="message">Reason for visit:</label>
         <textarea  type="text" id="message" name="message" required></textarea>
-    
-        <input type="submit" value="Book Appointment">
+
+        <label for="selected_doctor">Select Doctor:</label>
+        <select name="selected_doctor" id="selected_doctor">
+            <!-- Loop through available doctors and populate the dropdown options -->
+            {% for doctor in available_doctors %}
+                <option value="{{ doctor.id }}">{{ doctor.name }} - {{ doctor.specialization }}</option>
+            {% endfor %}
+        </select>
+        <br>    
+        <input type="submit" value="Next">
     </form>
     
 </div>
