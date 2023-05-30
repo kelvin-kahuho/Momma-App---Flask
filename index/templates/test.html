@@ -5,17 +5,17 @@
     <table>
         <thead>
             <tr>
-                <th>Timestamp</th>
-                <th>user-input</th>
-                <th>bot-response</th>
+                <th>id</th>
+                <th>username</th>
+                <th>email</th>
             </tr>
         </thead>
         <tbody>
-            {% for message in messages %}
+            {% for doctor in doctors %}
             <tr>
-                <td>{{ message.timestamp }}</td>
-                <td>{{ message.user_input }}</td>
-                <td>{{ message.bot_response }}</td>
+                <td>{{ doctor.id }}</td>
+                <td>{{ doctor.username }}</td>
+                <td>{{ doctor.email }}</td>
             </tr>
             {% endfor %}
         </tbody>
