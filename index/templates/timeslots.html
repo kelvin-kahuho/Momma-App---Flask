@@ -2,10 +2,6 @@
 {% block content %}
 
 <form name="form2" action="{{ url_for('book_appointment') }}" method="POST">
-
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="date" required>
-
     <label for="timeslot">Desired Timeslot:</label>
     <select name="timeslot" id="timeslot">
         <!-- Loop through available time slots and populate the dropdown options -->
