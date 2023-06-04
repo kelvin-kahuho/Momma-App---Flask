@@ -1,5 +1,6 @@
 {% extends 'main.html' %}
 {% block content %}
+<p class="error">{{success}}</p>
 
 <p class="error">{{score}}</p>
 
@@ -20,7 +21,30 @@
         <button type="submit" id="send-btn">Send</button>
       </form>
     </div>
+    <p>
+      <br>
+      <br>
+      Studies show that post-natal depression (PND) affects
+      at least 10 percent of women and that many depressed
+      mothers do not get proper treatment.
+      <br>
+      <br>
+      At Momma we developed a Postnatal Depression to assist mothers detect signs and symptoms of PND.
+      <br>
+      <br>
+      The scale consists of 10 short statements. A mother
+      checks off one of four possible answers that is closest to
+      how she has felt during the past week. Most mothers
+      easily complete the scale in less than five minutes.
+  </p>
+  <div class="center">
+      <a href="{{url_for('take_test')}}">
+          <button class="logout-button logout-button:hover">Take a test</button>
+      </a>
   </div>
+  </div>
+
+ 
 
   <script type="text/javascript">
     const chatBody = document.getElementById("chat-body");
