@@ -18,8 +18,13 @@
         <label for="message">Reason for visit:</label>
         <textarea  type="text" id="message" name="message" required></textarea>
 
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
         <label for="selected_doctor">Select Doctor:</label>
-        <select name="selected_doctor" id="selected_doctor">
+        <br>
+        <select style="font-size:larger;" name="selected_doctor" id="selected_doctor" required>
+            <option value=""> Select Doctor</option>
             <!-- Loop through available doctors and populate the dropdown options -->
             {% for doctor in available_doctors %}
                 <option value="{{ doctor.id }}">{{ doctor.name }} - {{ doctor.specialization }}</option>
