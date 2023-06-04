@@ -151,10 +151,10 @@ tr:nth-child(even) {
 }
 
 .logo{
-    max-width: 15%;
-    height: auto;
+    max-width: 20%;
+    height: 5%;
   }
-  .spacer {
+.spacer {
     margin-bottom: 150px;
   }
   
