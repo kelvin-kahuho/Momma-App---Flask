@@ -1,24 +1,41 @@
-{% extends 'main.html'%}
+{% extends 'main2.html'%}
 {% block content%}
 <p class="error">{{success}}</p>
-<h1 style="text-align: center;">Your Appointments</h1>
-<h2>{{ doctor.name }}</h2>
+<h2>Dr. {{ doctor.name }} - {{ doctor.specialization }}</h2>
+
+<h4 style="text-align: center;">Your Appointments</h4>
 
     <table>
         <thead>
             <tr>
-                <th>Appointment Date</th>
-                <th>Patient</th>
+                <th>ID</th>
+                <th>Patients Name</th>
+                <th>Message</th>
+                <th>Start Datet&Time</th>
+                <th>End Datet&Time</th>
             </tr>
         </thead>
         <tbody>
-            {% for appointment in appointments %}
+            {% for appointment in doctor.appointments %}
                 <tr>
-                    <td>{{ appointment.appointment_time }}</td>
-                    <td>{{ appointment.patient.name }}</td>
+                    <td>{{ appointment.id }}</td>
+                    <td>{{ appointment.name }}</td>
+                    <td>{{ appointment.message }}</td>
+                    <td>{{ appointment.timeslot.start_time}}</td>
+                    <td>{{ appointment.timeslot.end_time}}</td>
                 </tr>
             {% endfor %}
+            
+
         </tbody>
     </table>
+    <br>
+    <button><a href="/doctor_view">Refresh Table</a></button>
+
+    <p class="spacer"></p>
+
+    <a href="{{url_for('logout')}}" onclick="return confirm('Are you sure you want to logout?');">
+        <button class="logout-button logout-button:hover">Logout</button>
+    </a>
     
 {%endblock%}
