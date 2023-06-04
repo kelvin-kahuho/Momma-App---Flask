@@ -1,11 +1,14 @@
 {% extends 'main.html' %}
 {% block content %}
 <div class="profile">
+    <p class="spacer"></p>
     <h1>My profile</h1>
     <div class="user-info">
         <p>Username: {{user.username}}</p>
         <p>Email: {{ user.email }}</p>
-        <div>
+        <p class="spacer"></p>
+        <!--
+            <div>
             <h1>Your Appointments</h1>
             <table>
                 <thead>
@@ -27,6 +30,7 @@
             </table>
             
         </div>
+        -->
     </div>
 
 </div>
