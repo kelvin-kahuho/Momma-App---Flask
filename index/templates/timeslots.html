@@ -1,19 +1,21 @@
 {% extends 'main.html' %}
 {% block content %}
 
-<form name="form2" action="{{ url_for('book_appointment') }}" method="POST">
+<form style="font-size: xx-large;" name="form2" action="{{ url_for('book_timeslot') }}" method="POST">
+    <p class="spacer"> </p>
     <label for="timeslot">Desired Timeslot:</label>
+    <br>
     <select name="timeslot" id="timeslot">
+        <option value=""> Select Time</option>
         <!-- Loop through available time slots and populate the dropdown options -->
         {% for timeslot in timeslots %}
-            <option value="{{ timeslot.id }}">{{ timeslot.start_time }} - {{ timeslot.end_time }}</option>
+            <option style="font-size: xx-large; font-family:monospace;" value="{{ timeslot.id }}">{{ timeslot.start_time }} | {{ timeslot.end_time }}</option>
         {% endfor %}
     </select>
     <br>
+    <p class="spacer"> </p>
     <input type="submit" value="Book Appointment">
 
 </form>
-
-
 
 {% endblock content %}
