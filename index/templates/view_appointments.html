@@ -6,17 +6,23 @@
     <table>
         <thead>
             <tr>
-                <th>Appointment Date</th>
-                <th>Appointment Time</th>
+                <th>ID.</th>
+                <th>Name</th>
                 <th>Message</th>
+                <th>Doctor</th>
+                <th>Start Datet&Time</th>
+                <th>End Datet&Time</th>
             </tr>
         </thead>
         <tbody>
-            {% for appointment in appointments %}
+            {% for appointment in user.appointments %}
             <tr>
-                <td>{{ appointment.date }}</td>
-                <td>{{ appointment.time }}</td>
+                <td>{{ appointment.id }}</td>
+                <td>{{ appointment.name }}</td>
                 <td>{{ appointment.message }}</td>
+                <td>{{ appointment.doctor.name }} - {{ appointment.doctor.specialization }}</td>
+                <td>{{ appointment.timeslot.start_time }}</td>
+                <td>{{ appointment.timeslot.end_time }}</td>
             </tr>
             {% endfor %}
         </tbody>
