@@ -1,10 +1,10 @@
 #!/bin/bash
 
+#Installing rasa
+pip install rasa
+
 #Installing  flask
 pip install flask
-
-# Installing Rasa
-pip install rasa
 
 #Installing flask_sqlalchemy
 pip install flask_sqlalchemy==2.5.1
