@@ -8,7 +8,6 @@
     <table>
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Patients Name</th>
                 <th>Message</th>
                 <th>Start Datet&Time</th>
@@ -18,7 +17,6 @@
         <tbody>
             {% for appointment in doctor.appointments %}
                 <tr>
-                    <td>{{ appointment.id }}</td>
                     <td>{{ appointment.name }}</td>
                     <td>{{ appointment.message }}</td>
                     <td>{{ appointment.timeslot.start_time}}</td>
