@@ -23,7 +23,10 @@ Bootstrap for styling and user interface design
 Installation:
 
 Clone the repository and navigate to the project directory
-Install the required dependencies
+Install the required dependencies by running the install script
+
+./install.sh
+
 Run the application using python run.py
 Contributing:
 
