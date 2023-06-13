@@ -11,9 +11,13 @@ If the user's score indicates a moderate to high risk of PND, the application of
 Features:
 
 Postnatal depression calculator that helps new mothers determine if they may be experiencing PND
+<br>
 Doctor appointment booking system that allows users to easily schedule an appointment with a healthcare professional
+<br>
 Easy-to-use interface that guides users through the process of assessing their risk of PND and seeking help if necessary
+<br>
 Privacy and security measures to protect user data and maintain confidentiality
+<br>
 Technologies Used:
 
 Python for backend logic
