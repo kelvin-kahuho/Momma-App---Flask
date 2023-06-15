@@ -173,6 +173,7 @@ def home():
 
 @app.route("/take_test", methods=['GET', 'POST'])
 def take_test():
+    available_doctors = Doctor.query.all()
     if request.method == 'POST':
 
         q1 = int(request.form.get('q1'))
@@ -194,7 +195,7 @@ def take_test():
 
             text = 'Mothers scoring above 12 or 13 are likely to be suffering from depression and should seek medical attention. A careful clinical evaluation by a health care professional is needed to confirm a diagnosis and establish a treatment plan'
 
-            return render_template("book_appointment.html", score = score, text = text)
+            return render_template("book_appointment.html", score = score, text = text, available_doctors= available_doctors)
         
         else:
             
