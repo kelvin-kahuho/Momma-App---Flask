@@ -14,3 +14,6 @@ pip install flask_admin
 
 #Installing SQLAlchemy==1.4.4
 pip install SQLAlchemy==1.4.4
+
+#Installing other dependencies
+pip install --no-cache-dir -r requirements.txt
