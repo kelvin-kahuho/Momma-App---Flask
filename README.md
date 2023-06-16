@@ -31,7 +31,14 @@ Install the required dependencies by running the install script
 
 ./install.sh
 
-Run the application using python run.py
+Run the application using 
+<br>
+python run.py
+<br>
+Running the app on Docker
+<br>
+Use the Dockerfile and build an image using python or Ubuntu images as parent images.
+ 
 Contributing:
 
 Contributions are welcome! If you would like to contribute to this project, please open an issue or pull request on the Github repository.
