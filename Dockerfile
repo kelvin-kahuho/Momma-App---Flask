@@ -9,6 +9,7 @@ WORKDIR /app/Momma-app---FLASK
 COPY . .
 
 #install python dependecies in requirements.txt file to the container
+RUN pip install --no-cache-dir gunicorn
 RUN pip install --no-cache-dir -r requirements.txt
 
 #Expose the port on which your flask app runs
