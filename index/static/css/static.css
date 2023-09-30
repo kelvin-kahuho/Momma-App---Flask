@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
 h1 {
     font-size: 20px;
     color: rgb(47, 47, 49);
@@ -111,13 +116,15 @@ input[type="text"], input[type="email"], input[type="date"], input[type="time"],
 }
 
 input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 0.8em 1.2em;
-    margin-top: 1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  width: 100%;
+  text-align: center; 
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.8em 1.2em;
+  margin-top: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 input[type="submit"]:hover {
@@ -151,11 +158,11 @@ tr:nth-child(even) {
 }
 
 .logo{
-    max-width: 20%;
-    height: 5%;
+    max-width: 10%;
+    height: 4%;
   }
 .spacer {
-    margin-bottom: 150px;
+    margin-bottom: 10px;
   }
   
   #mdapp-widget {

@@ -64,6 +64,7 @@ def doctor_register():
         new_doctor = Doctor(name=name, email=email, specialization=specialization, password=password)
         db.session.add(new_doctor)
         db.session.commit()
+
         # Generate timeslots for the new doctor
 
         doctor = Doctor.query.filter_by(name=name).first()
@@ -88,7 +89,7 @@ def generate_timeslots(doctor_id):
 
     start_time = datetime.combine(current_date + timedelta(days=1), time(9, 0))
 
-    end_date = datetime(2023, 7, 31, 17, 0, 0)
+    end_date = datetime(2023, 12, 31, 17, 0, 0)
 
     
     # Define the duration of each timeslot
@@ -336,6 +337,3 @@ def test_page():
     timeslots = Timeslot.query.all()
 
     return render_template('test.html', doctors=doctors, timeslots=timeslots)
-
-
-
